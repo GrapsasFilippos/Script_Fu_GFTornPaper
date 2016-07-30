@@ -31,7 +31,6 @@
     (gimp-context-set-foreground '(225 225 225) )
     
     
-;;     (gimp-layer-set-visible inDrawable FALSE)
     (gimp-image-remove-layer inImage inDrawable)
     
     (gimp-image-add-layer inImage tuLayer 0)
@@ -39,9 +38,9 @@
     (gimp-image-select-item inImage CHANNEL-OP-REPLACE tuLayer)
     (script-fu-distress-selection inImage tuLayer
       230 ;; Threshold
-      8   ;; Spread
-      4   ;; Granularity
-      2   ;; Smooth
+      16   ;; Spread
+      8   ;; Granularity
+      9   ;; Smooth
       1   ;; Smooth horizontally
       1   ;; Smooth vertically
     )
@@ -78,12 +77,12 @@
     (script-fu-drop-shadow
       inImage
       tuLayer
-      0  ;; Offset X
-      0  ;; Offset Y
-      30 ;; Blur radius
+      0        ;; Offset X
+      0        ;; Offset Y
+      30       ;; Blur radius
       '(0 0 0) ;; Color
-      100 ;; Opacity
-      TRUE ;; Allow resizing
+      100      ;; Opacity
+      TRUE     ;; Allow resizing
     )
     (set! tuLayer (car (gimp-image-merge-visible-layers inImage EXPAND-AS-NECESSARY) ) )
     (plug-in-autocrop RUN-INTERACTIVE inImage tuLayer)
