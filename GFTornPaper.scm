@@ -1,5 +1,6 @@
 ;;
 
+;; GIMP Procedures
 (script-fu-register
   "script-fu-gf-torn-paper"
   "GF Torn Paper"
@@ -16,6 +17,7 @@
 (script-fu-menu-register "script-fu-gf-torn-paper" "<Image>/Filters")
 
 
+;; My Procedures
 (define
   (script-fu-gf-torn-paper inImage inDrawable)
   (let*
@@ -85,7 +87,7 @@
       TRUE     ;; Allow resizing
     )
     (set! tuLayer (car (gimp-image-merge-visible-layers inImage EXPAND-AS-NECESSARY) ) )
-    (plug-in-autocrop RUN-INTERACTIVE inImage tuLayer)
+    (plug-in-autocrop RUN-NONINTERACTIVE inImage tuLayer)
     (gimp-layer-set-name tuLayer "Torn Out")
     
     
