@@ -1,12 +1,13 @@
 .PHONY: install uninstall
 
 
-DIR_BIN = /usr/bin
-DIR_GIMP_SCRIPTS = /usr/share/gimp/2.0/scripts
+DIR_BIN = $(DESTDIR)/usr/bin
+DIR_GIMP_SCRIPTS = $(DESTDIR)/usr/share/gimp/2.0/scripts
 
 
 
 install:
+	mkdir -p $(DIR_BIN)
 	cp ./gimp-effect-GFTornPager $(DIR_BIN)
 	chmod +x $(DIR_BIN)/gimp-effect-GFTornPager
 	
