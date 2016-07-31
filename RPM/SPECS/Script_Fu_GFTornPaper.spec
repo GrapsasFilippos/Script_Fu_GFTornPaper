@@ -19,16 +19,17 @@
 # See also http://en.opensuse.org/openSUSE:Specfile_guidelines
 
 Name:           Script_Fu_GFTornPaper
-Version:        0.9.0
-Release:        0
+Version:        0.1.0
+Release:        1
 Summary:        GIMP Script for Torn Out Paper filter
 
 License:        GPLv3
 Group:          Productivity/Graphics/Bitmap Editors
 Url:            https://github.com/GrapsasFilippos/Script_Fu_GFTornPaper
-Source0:        Script_Fu_GFTornPaper-0.9.0.tar.gz
+Source0:        Script_Fu_GFTornPaper-0.1.0.tar.gz
 # BuildRequires:  
 Requires:       gimp
+Requires:       php
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
