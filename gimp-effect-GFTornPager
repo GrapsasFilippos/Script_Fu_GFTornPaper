@@ -22,7 +22,7 @@ abstract class GFTornPager {
       $returns .=
         '-b \'(gf-batch-torn-paper'.
         ' "'. $fileName[ 0 ]. '" '. '"'. $fileName[ 1 ]. '")\' \\'. PHP_EOL;
-    $returns .= '-b \'(gimp-quit 0)\'';
+    $returns .= '-b \'(gimp-quit 0)\''. PHP_EOL;
     
     return $returns;
   }
